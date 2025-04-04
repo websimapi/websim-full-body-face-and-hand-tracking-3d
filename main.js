@@ -20,6 +20,12 @@ class FullBodyTrackingApp {
             this.sceneManager.updateAvatar(trackingData);
         });
         
+        // Set calibration complete callback
+        this.trackingManager.setCalibrationCompleteCallback((calibrationData) => {
+            this.sceneManager.setCalibrationData(calibrationData);
+            console.log("Calibration complete, system ready for tracking");
+        });
+        
         // Start animation loop
         this.sceneManager.animate();
         
@@ -29,4 +35,3 @@ class FullBodyTrackingApp {
 
 // Create and initialize the application
 const app = new FullBodyTrackingApp();
-
