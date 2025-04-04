@@ -29,7 +29,7 @@ export class TrackingManager {
 
     async initialize() {
         // Initialize MediaPipe Holistic
-        this.holistic = new Holistic({
+        this.holistic = new window.Holistic({
             locateFile: (file) => {
                 return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic/${file}`;
             }
@@ -99,4 +99,3 @@ export class TrackingManager {
         this.callbacks.onUpdate = callback;
     }
 }
-
